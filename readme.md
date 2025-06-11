@@ -20,7 +20,7 @@ O objetivo é consumir as vendas publicadas no Kafka, processar o JSON recebido,
 # 🗄️ Estrutura dos Dados
 
 Cada mensagem no Kafka segue o seguinte schema (em JSON):
-
+<pre>
 {
   "id_ordem": "string",
   "cpf_cliente": "string",
@@ -29,19 +29,21 @@ Cada mensagem no Kafka segue o seguinte schema (em JSON):
   "valor_total": 1000,
   "data_hora": "2025-06-10T12:34:56"
 }
+</pre>
 
 # ⚙️ Como Rodar o Projeto
 
 ## 1️⃣ Subir o Kafka
 
+### Start Zookeeper
 ```
-# Start Zookeeper
 bin/zookeeper-server-start.sh config/zookeeper.properties
-
-# Start Kafka
-bin/kafka-server-start.sh config/server.properties
-
 ```
+### Start Kafka
+```
+bin/kafka-server-start.sh config/server.properties
+```
+
 ## 2️⃣ Criar o tópico Kafka
 
 ```
@@ -72,6 +74,7 @@ spark-submit --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.5.1 consumi
 
 # 📊 Exemplo de Saída
 
+<pre>
 +----------+----------------+
 |produto   |quantidade_total|
 +----------+----------------+
@@ -82,6 +85,7 @@ spark-submit --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.5.1 consumi
 |Impressora|26              |
 |Teclado   |33              |
 +----------+----------------+
+</pre>
 
 # ✅ Requisitos
 
