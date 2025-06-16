@@ -31,6 +31,29 @@ Cada mensagem no Kafka segue o seguinte schema (em JSON):
 }
 </pre>
 
+
+# 🔧 Configuração do Ambiente do Projeto
+
+1. Clone o repositório:
+
+```
+git clone https://github.com/Bru-Silveira/kafka-pyspark.git
+cd seu_repositório
+```
+
+2. Crie e ative o ambiente virtual:
+
+```
+python3 -m venv venv
+source venv/bin/activate
+```
+
+3. Instale as dependências:
+
+```
+pip install -r requirements.txt
+```
+
 # ⚙️ Como Rodar o Projeto
 
 ## 1️⃣ Subir o Kafka
